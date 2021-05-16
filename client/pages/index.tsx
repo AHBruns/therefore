@@ -71,6 +71,7 @@ export const getStaticProps = async () => {
         }))
       ),
     },
+    revalidate: 15,
   };
 };
 
