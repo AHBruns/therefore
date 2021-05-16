@@ -40,10 +40,13 @@ export default function Post(
               types: {
                 table: (props: any) => (
                   <table>
-                    {props.node.rows.map((row: any) => (
-                      <tr>
-                        {row.cells.map((text: string) => (
-                          <td className="border border-gray-300 py-1 px-2">
+                    {props.node.rows.map((row: any, index: number) => (
+                      <tr key={index}>
+                        {row.cells.map((text: string, index: number) => (
+                          <td
+                            className="border border-gray-300 py-1 px-2"
+                            key={index}
+                          >
                             {text}
                           </td>
                         ))}
@@ -71,7 +74,6 @@ export const getStaticPaths = () => {
 export const getStaticProps = async (
   context: GetStaticPropsContext<{ id: string }>
 ) => {
-  console.log(context);
   if (!context.params?.id) throw new Error("invalid id");
 
   let post = await client.get("post", context.params.id);
