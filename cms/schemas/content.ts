@@ -19,5 +19,8 @@ export default {
         },
       ],
     },
+    {
+      type: "table",
+    },
   ],
 };
