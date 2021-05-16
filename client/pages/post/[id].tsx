@@ -36,6 +36,24 @@ export default function Post(
             blocks={props.post.body ?? []}
             projectId={projectId}
             dataset={dataset}
+            serializers={{
+              types: {
+                table: (props: any) => (
+                  <table>
+                    {props.node.rows.map((row: any) => (
+                      <tr>
+                        {row.cells.map((text: string) => (
+                          <td className="border border-gray-300 py-1 px-2">
+                            {text}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </table>
+                  // <pre>{JSON.stringify(props, null, 2)}</pre>
+                ),
+              },
+            }}
           />
         </div>
       )}

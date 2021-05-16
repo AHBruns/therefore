@@ -47,7 +47,9 @@ const IndexPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => (
       <h1 className="text-4xl font-bold tracking-wider leading-tight text-orange-500 p-4">
         Posts
       </h1>
-      {props.posts.map(PostRow)}
+      {props.posts.map((props) => (
+        <PostRow key={props._id} {...props} />
+      ))}
       <div className="flex items-center justify-center text-sm text-gray-700 tracking-wider leading-tight font-light p-8">
         <p>That's all, for now. 🙂</p>
       </div>
