@@ -32,9 +32,11 @@ const PostRow = (
                 ))}
             </p>
           )}
-          <button className="text-xs sm:self-start bg-orange-500 text-white tracking-wider leading-tight px-2 py-1 rounded-md">
-            Is something incorrect?
-          </button>
+          <Link href="/post/ed5ae0b2-ed02-4609-9b0d-dfbcb6a010f0">
+            <button className="text-xs sm:self-start bg-orange-500 text-white tracking-wider leading-tight px-2 py-1 rounded-md">
+              Is something incorrect?
+            </button>
+          </Link>
         </div>
       </Link>
     </div>
